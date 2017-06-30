@@ -1,0 +1,299 @@
+	* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-family: "Dancing Script";
+}
+
+.contenedor {
+	width:90%;
+	max-width:900px;
+	margin:auto;
+	display:flex;
+	flex-flow:row wrap;
+}
+
+@keyframes slidein {
+	0% {
+		 margin-top:150%;
+	}
+	60% {
+		margin-top:-5%;
+	}
+	100% {
+		margin-top:0%;
+	}
+}
+
+.contenedor{
+	animation-name: slidein;
+	animation-duration: 2s;
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	-o-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+body {
+	background:#02010a;
+}
+
+header {
+	background-color: #5b7989;
+	width:100%;
+	padding:20px;
+	display: flex;
+	justify-content:space-between;
+	align-items:center;
+
+	flex-direction:row;
+	flex-wrap:wrap;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+header .logo {
+	color:#fff;
+	font-size:20px;
+}
+
+header .logo img {
+	width:50px;
+	vertical-align: top;
+}
+header .logo h3{
+text-shadow: 2px 2px #02010a;
+}
+header .logo a {
+	color:#fff;
+	text-decoration: none;
+	line-height:50px;
+}
+
+header nav {
+	width:50%;
+	display:flex;
+	flex-wrap:wrap;
+	align-items:center;
+}
+
+header nav a {
+
+	color:#fff;
+	text-align: center;
+	padding:10px;
+	flex-grow:1;
+}
+
+.main {
+	background:#82c3a6;
+	padding:20px;
+
+	flex:1 1 100%;
+}
+
+.main article {
+	margin-bottom: 20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #000;
+}
+
+.main article:nth-last-child(1){
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom:none;
+}
+
+aside {
+	background:#d5c75f;
+	border: 1px;
+	padding:20px;
+	flex:1 1 50%;
+
+	display: flex;
+	flex-wrap:nowrap;
+	flex-direction:row;
+	justify-content:flex-start;
+}
+
+aside .widget {
+	margin:2%;
+  text-align: center;
+}
+
+.leyenda{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+aside .widget img, article img{
+  box-shadow: 2px 2px #02010a;
+}
+
+#paisaje img{
+transition-property: rotate;
+transition-duration: 0.5s;
+transition-timing-function:
+linear;}
+#paisaje img:hover {
+transform:rotate(10deg);
+box-shadow: 10px 10px 5px #82c3a6;
+}
+
+#retrato img{
+transition-property: translate3d;
+transition-duration: 0.5s;
+transition-timing-function:
+linear;}
+#retrato img:hover {
+transform: translate3d(20px,-5px,0px);
+box-shadow: 10px 10px 5px #82c3a6;
+}
+footer {
+	background:#C6d5c5;
+	width: 100%;
+	padding:20px;
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+footer .links {
+	text-align: center;
+	display:flex;
+	flex-wrap:wrap;
+	flex-direction: column;
+	padding: 10px;
+}
+
+footer .links a {
+	flex-grow:1;
+
+	color:#000000;
+	padding:0px;
+	text-align: left;
+	text-decoration:none;
+	vertical-align: middle;
+
+}
+
+
+#correo{
+	text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+	.contenedor {
+		flex-direction:column;
+	}
+
+	header {
+		flex-direction:column;
+		padding:0;
+	}
+
+	header .logo {
+		margin:20px 0;
+	}
+
+	header nav {
+		width: 100%;
+	}
+
+	aside {
+		flex-direction:row;
+		flex:0;
+	}
+
+	aside .widget {
+		flex-grow:1;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	aside {
+		flex-direction:column;
+	}
+
+	footer {
+		justify-content:space-around;
+	}
+}
+
+@media screen and (max-width: 420px) {
+	aside {
+		flex-direction:column;
+	}
+
+	footer {
+		justify-content:space-around;
+	}
+
+  header .logo {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+	}
+}
+
+
+
+
+
+
+/*------------------PAGINA DE PAISAJES--------------*/
+section.galeria {
+    margin: 0 auto;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox; /*IE 10*/
+    padding: 5%;
+    padding-bottom: 2%;
+    background:#d5c75f;
+    width: 100%;
+}
+section.galeria div {
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: 33.3%;
+    padding: 0.2em;
+}
+section.galeria div img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    max-width: 300px;
+}
+section.galeria div span {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+ /*Media Queries*/
+ @media screen and (max-width: 600px) {
+		header h3{
+			text-align: center;
+		}
+    section.galeria div {
+      margin: 0 auto;
+    }
+    section.galeria {
+        flex-direction: column;
+    }
+}
+
+.img1{
+  filter: blur(10px);
+}
+.img3{
+  filter: sepia(90%);
+}
+.par{
+  filter: grayscale(100%);
+}
